@@ -1,4 +1,4 @@
-## Chuck Norris Joke Machine
+## Chuck Norris Jokes
 
 A small demo project that uses the various APIs to locate and show Chuck Norris jokes.
 
