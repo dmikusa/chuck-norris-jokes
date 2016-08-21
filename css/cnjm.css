@@ -6,11 +6,15 @@
     text-align: center;
 }
 
-#joke .joke {
-    font-size: 24px;
+#jokes .joke {
+    font-size: 22px;
     font-style: italic;
 }
 
-#joke .panel-heading button {
+#jokes .panel-heading h4 {
+    display: inline;
+}
+
+#jokes .panel-heading button {
     float: right;
 }
