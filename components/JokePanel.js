@@ -8,7 +8,7 @@ var JokePanel = React.createClass({
         var title = (
             <div>
                 <h4>{this.props.title}</h4>
-                <Button bsSize="xsmall">
+                <Button bsSize="xsmall" onClick={this.props.refresh}>
                     <Glyphicon glyph="refresh" />
                 </Button>
             </div>
