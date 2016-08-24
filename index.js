@@ -1,9 +1,12 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var JokePanel = require('./components/JokePanel');
+var Provider = require('react-redux/lib/components/Provider').default;
+var store = require('./store');
+var JokePanelBrain = require('./containers/JokePanelBrain');
 
 ReactDOM.render(
-    <JokePanel title="The Internet Chuck Norris Database"
-               joke="Chuck Norris once shot down a German fighter plane with his finger. By yelling Bang!" />,
+    <Provider store={store}>
+        <JokePanelBrain />
+    </Provider>,
     document.getElementById('jokes')
 );
