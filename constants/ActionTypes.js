@@ -1,3 +1,4 @@
 module.exports = {
-    REFRESH: 'REFRESH'
+    REFRESH: 'REFRESH',
+    FETCH_JOKE: 'FETCH_JOKE'
 };
