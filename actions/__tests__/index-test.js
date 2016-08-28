@@ -12,7 +12,10 @@ describe("action creators work", function() {
             .toEqual({ type: types.FETCH_JOKE, status: 'error', error: 'I failed :(' });
     });
     it("creates a fetch joke succeeded action", function() {
-        expect(actions.fetchJokeSuccess('I worked :)'))
-            .toEqual({ type: types.FETCH_JOKE, status: 'success', response: 'I worked :)' });
+        var now = Date.now();
+        var joke = { title: 'Hello World!', body: 'I worked :)'};
+        expect(actions.fetchJokeSuccess(joke, now))
+            .toEqual({ type: types.FETCH_JOKE, status: 'success',
+                       joke: joke, receivedAt: now });
     });
 });

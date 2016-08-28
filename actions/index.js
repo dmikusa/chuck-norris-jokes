@@ -7,7 +7,8 @@ module.exports = {
     'fetchJokeFailed': function(error) {
         return { type: types.FETCH_JOKE, status: 'error', error: error };
     },
-    'fetchJokeSuccess': function(response) {
-        return { type: types.FETCH_JOKE, status: 'success', response: response };
+    'fetchJokeSuccess': function(joke, receivedAt) {
+        return { type: types.FETCH_JOKE, status: 'success',
+                 joke: joke, receivedAt: receivedAt };
     }
 };
