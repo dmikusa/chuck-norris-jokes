@@ -28,7 +28,7 @@ function refresh() {
                 .then(function(json) {
                     dispatch(fetchJokeSuccess({
                         title: 'The Internet Chuck Norris Database',
-                        joke: json.value.joke
+                        body: json.value.joke
                     }, Date.now()));
                 })
                 .catch(function(ex) {

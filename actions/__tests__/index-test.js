@@ -40,7 +40,7 @@ describe("async actions", function() {
         var expectedActions = [
             actions.fetchJoke(),
             actions.fetchJokeSuccess({title: 'The Internet Chuck Norris Database',
-                                      joke: 'JOKE'}, now)
+                                      body: 'JOKE'}, now)
         ];
         var store = mockStore({});
         var promise = store.dispatch(actions.refresh());
