@@ -34,6 +34,7 @@ describe("async actions", function() {
     it("fetches joke successfully", function() {
         nock('http://api.icndb.com')
             .get('/jokes/random')
+            .query({'escape': 'javascript'})
             .reply(200, { "type": "success", "value": { "id": 5, "joke": 'JOKE'} });
 
         var now = Date.now();
@@ -58,6 +59,7 @@ describe("async actions", function() {
     it("fails to fetch a joke, end point not found", function() {
         nock('http://api.icndb.com')
             .get('/jokes/random')
+            .query({'escape': 'javascript'})
             .reply(404, {});
 
         var expectedActions = [
@@ -75,13 +77,14 @@ describe("async actions", function() {
     it("fails to fetch a joke, some error", function() {
         nock('http://api.icndb.com')
             .get('/jokes/random')
+            .query({'escape': 'javascript'})
             .replyWithError('something awful happened');
 
         var expectedActions = [
             actions.fetchJoke(),
             actions.fetchJokeFailed({
                 "name": "FetchError",
-                "message": "request to http://api.icndb.com/jokes/random failed, reason: something awful happened",
+                "message": "request to http://api.icndb.com/jokes/random?escape=javascript failed, reason: something awful happened",
                 "type": "system"})
         ];
         var store = mockStore({});

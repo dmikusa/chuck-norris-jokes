@@ -17,7 +17,7 @@ function fetchJokeSuccess(joke, receivedAt) {
 function refresh() {
     return function(dispatch) {
         dispatch(fetchJoke());
-        return fetch('http://api.icndb.com/jokes/random')
+        return fetch('http://api.icndb.com/jokes/random?escape=javascript')
                 .then(function(response) {
                     if (response.status >= 400) {
                         throw new Error("Unexpected response from server: " + response.status);
