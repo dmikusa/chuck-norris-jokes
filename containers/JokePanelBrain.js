@@ -13,7 +13,6 @@ var mapStateToProps = function(state) {
 var mapDispatchToProps = function(dispatch) {
     return {
         refresh: function(e) {
-            console.log('refresh clicked');
             dispatch(actions.refresh());
         }
     };
