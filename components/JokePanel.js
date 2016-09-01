@@ -4,6 +4,9 @@ var Button = require('react-bootstrap/lib/Button');
 var Glyphicon = require('react-bootstrap/lib/Glyphicon');
 
 var JokePanel = React.createClass({
+    componentDidMount: function() {
+        this.props.refresh();
+    },
     render: function() {
         var title = (
             <div>
