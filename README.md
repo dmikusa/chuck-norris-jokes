@@ -10,4 +10,4 @@ To try this out, run `npm install`.  Then run `npm run build`.  Now open `index.
 
 ### Demo
 
-See demo [here](http://www.mikusa.com/).
+See demo [here](http://www.mikusa.com/cnj).
